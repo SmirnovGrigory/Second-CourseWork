@@ -1,0 +1,18 @@
+DATETIME INFO : Object Create 
+DATETIME INFO : Table [Thomson NFA] 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : | S \ E |  name  |  a  | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   0   |  name  |     | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   1   |     |     | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   2   |     |  name  | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   3   |     |  name  | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   4   |  Target  |     | 
+DATETIME INFO : +-------+-----+-----+ 
+DATETIME INFO : |   5   |  Target  |     | 
+DATETIME INFO : +-------+-----+-----+ 
+------+-----+-----+ 

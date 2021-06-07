@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Eco.Toolchain.Thompson1", "Eco.Toolchain.Thompson1.vcxproj", "{D8457E86-D471-4A18-88DD-919B19561B5C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Eco.Toolchain.Thompson1UnitTest", "Eco.Toolchain.Thompson1UnitTest.vcxproj", "{50453430-C650-498B-8751-4AEA73048A25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DynamicDebug|Win32 = DynamicDebug|Win32
+		DynamicRelease|Win32 = DynamicRelease|Win32
+		StaticDebug|Win32 = StaticDebug|Win32
+		StaticRelease|Win32 = StaticRelease|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.DynamicDebug|Win32.ActiveCfg = DynamicDebug|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.DynamicDebug|Win32.Build.0 = DynamicDebug|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.DynamicRelease|Win32.ActiveCfg = DynamicRelease|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.DynamicRelease|Win32.Build.0 = DynamicRelease|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.StaticDebug|Win32.ActiveCfg = StaticDebug|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.StaticDebug|Win32.Build.0 = StaticDebug|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.StaticRelease|Win32.ActiveCfg = StaticRelease|Win32
+		{D8457E86-D471-4A18-88DD-919B19561B5C}.StaticRelease|Win32.Build.0 = StaticRelease|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.DynamicDebug|Win32.ActiveCfg = StaticDebug|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.DynamicDebug|Win32.Build.0 = StaticDebug|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.DynamicRelease|Win32.ActiveCfg = StaticRelease|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.DynamicRelease|Win32.Build.0 = StaticRelease|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.StaticDebug|Win32.ActiveCfg = StaticDebug|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.StaticDebug|Win32.Build.0 = StaticDebug|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.StaticRelease|Win32.ActiveCfg = StaticRelease|Win32
+		{50453430-C650-498B-8751-4AEA73048A25}.StaticRelease|Win32.Build.0 = StaticRelease|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A60ED7EE-859C-4CC7-BA43-26DB0E993E4A}
+	EndGlobalSection
+EndGlobal

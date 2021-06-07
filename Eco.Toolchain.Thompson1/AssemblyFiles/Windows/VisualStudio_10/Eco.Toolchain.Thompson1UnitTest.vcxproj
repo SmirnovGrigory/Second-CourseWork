@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="StaticDebug|Win32">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|Win32">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{50453430-C650-498B-8751-4AEA73048A25}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EcoToolchainThompson1</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\SharedFiles;..\..\..\HeaderFiles;..\..\..\..\Eco.Core1\SharedFiles;..\..\..\..\Eco.List1\SharedFiles;..\..\..\..\Eco.FSM1\SharedFiles;..\..\..\..\Eco.Data1\SharedFiles;..\..\..\..\Eco.Stack1\SharedFiles;..\..\..\..\Eco.String1\SharedFiles;..\..\..\..\Eco.Log1\SharedFiles;..\..\..\..\Eco.Dictionary1\SharedFiles;..\..\..\..\Eco.InterfaceBus1\SharedFiles;..\..\..\..\Eco.TaskScheduler1\SharedFiles;..\..\..\..\Eco.MemoryManager1\SharedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <CompileAs>CompileAsC</CompileAs>
+      <PreprocessorDefinitions>ECO_WIN32;_DEBUG;_CONSOLE;ECO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.Dictionary1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.Log1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.FSM1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.Data1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.Stack1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.List1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.String1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.InterfaceBus1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.MemoryManager1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;..\..\..\..\Eco.System1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticDebug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>00000000000000000000000042757331.lib;0000000000000000000000004D656D31.lib;00000000000000000000000000000100.lib;2F557A53EB7B42AD849CD8EC16CF5C5D.lib;5E7C610CB846447DB59A3C5A2C4F446F.lib;53884AFC93C448ECAA929C8D3A562281.lib;84CC0A7DBABD44EEBE749C9A8312D37E.lib;97322B6765B74342BBCE38798A0B40B5.lib;5A0F0DD57E6448EC9EE0E5D67572B47E.lib;18129B1DCF9248D9A7787F9206E2D6DC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>..\..\..\SharedFiles;..\..\..\HeaderFiles;..\..\..\..\Eco.Core1\SharedFiles;..\..\..\..\Eco.List1\SharedFiles;..\..\..\..\Eco.FSM1\SharedFiles;..\..\..\..\Eco.Data1\SharedFiles;..\..\..\..\Eco.Stack1\SharedFiles;..\..\..\..\Eco.String1\SharedFiles;..\..\..\..\Eco.Log1\SharedFiles;..\..\..\..\Eco.Dictionary1\SharedFiles;..\..\..\..\Eco.InterfaceBus1\SharedFiles;..\..\..\..\Eco.TaskScheduler1\SharedFiles;..\..\..\..\Eco.MemoryManager1\SharedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ECO_WIN32;NDEBUG;_CONSOLE;ECO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticRelease\;..\..\..\..\Eco.InterfaceBus1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticRelease\;..\..\..\..\Eco.MemoryManager1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticRelease\;..\..\..\..\Eco.System1\BuildFiles\$(TargetPlatformIdentifier)\$(ProcessorArchitecture)\StaticRelease\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>00000000000000000000000042757331.lib;0000000000000000000000004D656D31.lib;00000000000000000000000000000100.lib;2F557A53EB7B42AD849CD8EC16CF5C5D.lib;53884AFC93C448ECAA929C8D3A562281.lib;84CC0A7DBABD44EEBE749C9A8312D37E.lib;5A0F0DD57E6448EC9EE0E5D67572B47E.lib;5E7C610CB846447DB59A3C5A2C4F446F.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\UnitTestFiles\SourceFiles\EcoToolchainThompson1.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
