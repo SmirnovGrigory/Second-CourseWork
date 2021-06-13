@@ -1,18 +1,35 @@
 DATETIME INFO : Object Create 
+DATETIME INFO : Disjunction processing 
+DATETIME INFO : Klini star processing 
+DATETIME INFO : Disjunction processing 
+DATETIME INFO : Single transition processing b 
+DATETIME INFO : Single transition processing a 
+DATETIME INFO : Single transition processing a 
 DATETIME INFO : Table [Thomson NFA] 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : | S \ E |  name  |  a  | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   0   |  name  |     | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   1   |     |     | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   2   |     |  name  | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   3   |     |  name  | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   4   |  Target  |     | 
-DATETIME INFO : +-------+-----+-----+ 
-DATETIME INFO : |   5   |  Target  |     | 
-DATETIME INFO : +-------+-----+-----+ 
-------+-----+-----+ 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : | S \ E |  Null  |  b  |  a  | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   0   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   1   |     |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   2   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   3   |     |     |  name  | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   4   |  Target  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   5   |  Target  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   6   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   7   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   8   |     |  name  |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   9   |     |     |  name  | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   10   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 
+DATETIME INFO : |   11   |  name  |     |     | 
+DATETIME INFO : +-------+-----+-----+-----+ 

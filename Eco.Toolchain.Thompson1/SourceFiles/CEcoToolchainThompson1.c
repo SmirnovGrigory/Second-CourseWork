@@ -159,6 +159,23 @@ int16_t CEcoToolchainThompson1_set_KleeneStar(/* in */ struct IEcoToolchainThomp
 	return 0;
 }
 
+char_t* getUniqueId(/* in */ struct IEcoToolchainThompson1* me) {
+    CEcoToolchainThompson1* pCMe = (CEcoToolchainThompson1*)me;
+    char_t* strId = 0;
+    int16_t len = 0;
+    int16_t tmp = pCMe->UniqueStateIdentifyier;
+    pCMe->UniqueStateIdentifyier++;
+    while (tmp) {
+        tmp = tmp/10;
+        len++;
+    }
+    len++;
+    //TO DO
+    
+    //strId = (char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, );
+    return 0;
+}
+
 // основная функция строящая NFA
 int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* me, /* in */ char_t** re, /* in */ uint16_t size, /* in */ IEcoFSM1State* Source, /* in */ IEcoFSM1State* Target,/* out */ IEcoFSM1StateMachine** pIFA) {
     CEcoToolchainThompson1* pCMe = (CEcoToolchainThompson1*)me; //можно ли сделать по другому?
@@ -183,8 +200,7 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 
     /* TO DO */
 
-
-	pCMe->m_pIBus->pVTbl->QueryComponent(pCMe->m_pIBus, &CID_EcoStack1, 0, &IID_IEcoStack1, (void**) &pIStack);
+	result = pCMe->m_pIBus->pVTbl->QueryComponent(pCMe->m_pIBus, &CID_EcoStack1, 0, &IID_IEcoStack1, (void**) &pIStack);
 
     /* Проверка */
     if (result != 0 && pIStack == 0) {
@@ -194,8 +210,10 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
     }
 
 	if (size==1) {
+        pCMe->m_pILog->pVTbl->InfoFormat(pCMe->m_pILog,"Single transition processing %s", (*re));
+        //pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, (*re));
 		//если пришел один символ то просто надо создать транзитион, передать его как ивент
-        ValueEvent = (*pIFA)->pVTbl->AddEvent((*pIFA), &(*re)[0], 2, 0);
+        ValueEvent = (*pIFA)->pVTbl->AddEvent((*pIFA), &(*re)[0], (int16_t)(*re)[0], 0);
 		ValueEvent->pVTbl->set_Parameter(ValueEvent,&(*re)[0]);
 		(*pIFA)->pVTbl->AddTransition((*pIFA),ValueEvent,Source,Target);
         pIStack->pVTbl->Release(pIStack);
@@ -211,33 +229,34 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 			//нашли символ бинарной операции вне скобок
 			//следовательно он "верхний" в регулярном выражении
 			//разделяем выражение на 
-			if ((*re)[0] != pCMe->LeftBracket && (*re)[i-1] != pCMe->RightBracket) {
-				half1 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, i);
-				half1_size=i;
-				for (k=0; k<i;k++)
-					half1[k]=(*re)[k];
+			if ((*re)[0] == pCMe->LeftBracket && (*re)[i-1] == pCMe->RightBracket) {
+                half1 = (char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, i - 2);
+                half1_size = i - 2;
+                for (k = 1; k < i - 1; k++)
+                    half1[k - 1] = (*re)[k];
 			} else {
-				half1 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, i-2);
-				half1_size=i-2;
-				for (k=1; k<i-1;k++)
-					half1[k]=(*re)[k];
+                half1 = (char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, i);
+                half1_size = i;
+                for (k = 0; k < i; k++)
+                    half1[k] = (*re)[k];
 			}
 
-			if ((*re)[i+1] != pCMe->LeftBracket && (*re)[size-1] != pCMe->RightBracket) {
-				half2 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size-i-1);
-				half2_size=size-i-1;
-				for (k=i+1; k<size;k++)
-					half2[k]=(*re)[k];
+			if ((*re)[i+1] == pCMe->LeftBracket && (*re)[size-1] == pCMe->RightBracket) {
+                half2 = (char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size - i - 1 - 2);
+                half2_size = size - i - 1 - 2;
+                for (k = i + 2; k < size - 1; k++)
+                    half2[k - i - 2] = (*re)[k];
 			} else {
-				half2 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size-i-1-2);
-				half2_size=size-i-1-2;
-				for (k=i+2; k<size-1;k++)
-					half2[k]=(*re)[k];
+                half2 = (char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size - i - 1);
+                half2_size = size - i - 1;
+                for (k = i + 1; k < size; k++)
+                    half2[k - i - 1] = (*re)[k];
 			}
 
 			if ((*re)[i] == pCMe->DisjunctionCharacter) {
+                pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, "Disjunction processing");
 				//создаем состояния и транзишены по конструкции томпсона
-                NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA),"name",1,1);
+                NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA),"Null",1,1);
 				//NullEvent->pVTbl->set_Null(NullEvent,1);
 				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
 				NewState2 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
@@ -250,6 +269,7 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 				pCMe->ConstructionByRecursiveStrategy(me,&half1,half1_size,NewState1,NewState3,pIFA); 
 				pCMe->ConstructionByRecursiveStrategy(me,&half2,half2_size,NewState2,NewState4,pIFA); 
 			} else if ((*re)[i] == '^') {
+                pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, "Conjunction processing");
 				//создать промежуточное состояние и запустить два рекурсивных вызова до него и от него
 				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
 				pCMe->ConstructionByRecursiveStrategy(me,&half1,half1_size,Source,NewState1,pIFA); 
@@ -269,6 +289,7 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 	// MY TO DO
 
 	if ((*re)[size-1] == pCMe->KleeneStar) {
+        pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, "Klini star processing");
 		if ((*re)[0] != pCMe->LeftBracket && (*re)[size-2] != pCMe->RightBracket) {
 				half1 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size-1);
 				half1_size=size-1;
@@ -278,7 +299,7 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 				half1 =(char_t*)pCMe->m_pIMem->pVTbl->Alloc(pCMe->m_pIMem, size-3);
 				half1_size=size-3;
 				for (k=1; k<size-2;k++)
-					half1[k]=(*re)[k];
+					half1[k-1]=(*re)[k];
 			}
         NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA), "name", 1, 1);
 		//NullEvent->pVTbl->set_Null(NullEvent,1);
@@ -515,8 +536,10 @@ int16_t createCEcoToolchainThompson1(/* in */ IEcoUnknown* pIUnkSystem, /* in */
 
     /* Инициализация данных */
     pCMe->m_Name = 0;
+    pCMe->UniqueStateIdentifyier = 1;
     pCMe->ConstructionByRecursiveStrategy = ConstructionByRecursiveStrategy;
     pCMe->TransitionTableInfo = TransitionTableInfo;
+    pCMe->getUniqueId = getUniqueId;
 
     pIBus->pVTbl->QueryComponent(pIBus, &CID_EcoLog1, 0, &IID_IEcoLog1, (void**)&pCMe->m_pILog);
     if (result != 0 || pCMe->m_pILog == 0) {

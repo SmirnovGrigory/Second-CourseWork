@@ -1,10 +1,10 @@
 ﻿  CEcoToolchainThompson1Factory.c
   CEcoToolchainThompson1.c
-c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(334): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
-c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(524): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
-c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(530): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
+c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(355): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
+c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(547): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
+c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(553): warning C4133: 'function' : incompatible types - from 'CEcoToolchainThompson1 *' to 'IEcoToolchainThompson1 *'
   Generating Code...
-c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(335): warning C4715: 'CEcoToolchainThompson1_ConstructionFA' : not all control paths return a value
-c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(413): warning C4716: 'TransitionTableInfo' : must return a value
+c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(356): warning C4715: 'CEcoToolchainThompson1_ConstructionFA' : not all control paths return a value
+c:\users\user\repos\hse\eco.framework\eco.toolchain.thompson1\sourcefiles\cecotoolchainthompson1.c(434): warning C4716: 'TransitionTableInfo' : must return a value
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\StaticDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.lib) does not match the Library's OutputFile property value (C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\BuildFiles\Windows\x86\StaticDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
   Eco.Toolchain.Thompson1.vcxproj -> C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\StaticDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.lib
