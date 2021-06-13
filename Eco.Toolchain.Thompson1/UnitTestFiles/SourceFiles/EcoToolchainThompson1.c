@@ -160,7 +160,7 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
 	pIThompson->pVTbl->set_GroupBrakets(pIThompson,'(',')');
 	pIThompson->pVTbl->set_KleeneStar(pIThompson,'*');
 
-    result = pIThompson->pVTbl->ConstructionFA(pIThompson, &mR7, 8, &pINFA);
+    result = pIThompson->pVTbl->ConstructionFA(pIThompson, &mR6, 2, &pINFA);
 
 Release:
 

@@ -256,12 +256,12 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 			if ((*re)[i] == pCMe->DisjunctionCharacter) {
                 pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, "Disjunction processing");
 				//создаем состояния и транзишены по конструкции томпсона
-                NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA),"Null",1,1);
+                NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA),"N",1,1);
 				//NullEvent->pVTbl->set_Null(NullEvent,1);
-				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
-				NewState2 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
-				NewState3 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
-				NewState4 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
+				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
+				NewState2 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
+				NewState3 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
+				NewState4 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
 				(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,Source,NewState1);
 				(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,Source,NewState2);
 				(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,NewState3,Target);
@@ -271,7 +271,7 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 			} else if ((*re)[i] == '^') {
                 pCMe->m_pILog->pVTbl->Info(pCMe->m_pILog, "Conjunction processing");
 				//создать промежуточное состояние и запустить два рекурсивных вызова до него и от него
-				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
+				NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
 				pCMe->ConstructionByRecursiveStrategy(me,&half1,half1_size,Source,NewState1,pIFA); 
 				pCMe->ConstructionByRecursiveStrategy(me,&half2,half2_size,NewState1,Target,pIFA); 
 			}
@@ -301,10 +301,10 @@ int16_t ConstructionByRecursiveStrategy(/* in */ struct IEcoToolchainThompson1* 
 				for (k=1; k<size-2;k++)
 					half1[k-1]=(*re)[k];
 			}
-        NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA), "name", 1, 1);
+        NullEvent = (*pIFA)->pVTbl->AddEvent((*pIFA), "n", 1, 1);
 		//NullEvent->pVTbl->set_Null(NullEvent,1);
-		NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
-		NewState2 = (*pIFA)->pVTbl->AddState((*pIFA),"name");
+		NewState1 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
+		NewState2 = (*pIFA)->pVTbl->AddState((*pIFA),"n");
 		(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,Source,NewState1);
 		(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,Source,Target);
 		(*pIFA)->pVTbl->AddTransition((*pIFA),NullEvent,NewState2,NewState1);
@@ -347,14 +347,15 @@ int16_t CEcoToolchainThompson1_ConstructionFA(/* in */ struct IEcoToolchainThomp
     pCMe->m_pIBus->pVTbl->QueryComponent(pCMe->m_pIBus, &CID_EcoFSM1, 0, &IID_IEcoFSM1, (void**)&pIFSM);
     *pIFA = pIFSM->pVTbl->CreateStateMachine(pIFSM, "Thomson NFA");
 
-	StartState = (*pIFA)->pVTbl->AddState(*pIFA,"Source");
-	EndState = (*pIFA)->pVTbl->AddState(*pIFA,"Target");
+	StartState = (*pIFA)->pVTbl->AddState(*pIFA,"S");
+	EndState = (*pIFA)->pVTbl->AddState(*pIFA,"T");
 	StartState->pVTbl->set_Initial(StartState,1);
 	EndState->pVTbl->set_Final(EndState,1);
 	pCMe->ConstructionByRecursiveStrategy(me,re,size,StartState,EndState,pIFA);
     pCMe->TransitionTableInfo(pCMe, (*pIFA)->pVTbl->get_TransitionTable(*pIFA));
 }
 
+//вывод таблицы переходов
 int16_t TransitionTableInfo(/* in */ struct IEcoToolchainThompson1* me,/* in */ IEcoData1Table* pITransitionTable) {
     int16_t result = -1;
     CEcoToolchainThompson1* pCMe = (CEcoToolchainThompson1*)me;
