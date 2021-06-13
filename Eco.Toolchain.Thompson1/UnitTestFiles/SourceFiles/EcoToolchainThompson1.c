@@ -66,7 +66,6 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
 	char_t* mR4 = "avbvc";
 	char_t* mR5 = "a^(bvc)";
 	char_t* mR6 = "a*";
-    char_t* mR7 = "(bva)*va";
 
     /* Проверка и создание системного интрефейса */
     if (pISys == 0) {
@@ -160,7 +159,8 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
 	pIThompson->pVTbl->set_GroupBrakets(pIThompson,'(',')');
 	pIThompson->pVTbl->set_KleeneStar(pIThompson,'*');
 
-    result = pIThompson->pVTbl->ConstructionFA(pIThompson, &mR6, 2, &pINFA);
+    result = pIThompson->pVTbl->ConstructionFA(pIThompson, &mR2, 3, &pINFA);
+	//pITransitionTable = pINFA->pVTbl->get_TransitionTable(pINFA);
 
 Release:
 

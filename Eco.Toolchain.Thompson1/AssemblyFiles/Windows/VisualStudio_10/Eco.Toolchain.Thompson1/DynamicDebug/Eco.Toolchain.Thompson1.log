@@ -1,0 +1,6 @@
+﻿  CEcoToolchainThompson1Factory.c
+  CEcoToolchainThompson1.c
+  Generating Code...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\DynamicDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.dll) does not match the Linker's OutputFile property value (C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\BuildFiles\Windows\x86\DynamicDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Creating library C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\DynamicDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.lib and object C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\DynamicDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.exp
+  Eco.Toolchain.Thompson1.vcxproj -> C:\Users\User\repos\hse\Eco.Framework\Eco.Toolchain.Thompson1\AssemblyFiles\Windows\VisualStudio_10\Eco.Toolchain.Thompson1\DynamicDebug\2F557A53EB7B42AD849CD8EC16CF5C5D.dll

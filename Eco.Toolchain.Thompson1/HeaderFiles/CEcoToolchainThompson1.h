@@ -37,10 +37,8 @@ typedef struct CEcoToolchainThompson1 {
 
     //вспомогательная функцуия(рекурсивна)
     int16_t(*ConstructionByRecursiveStrategy)(/* in */ struct IEcoToolchainThompson1* me, /* in */ char_t** re, /* in */ uint16_t size,  /* in */ IEcoFSM1State* Source, /* in */ IEcoFSM1State* Target, /* out */ IEcoFSM1StateMachine** pIFA);
-    //вывод таблицы переходов
-    int16_t(*TransitionTableInfo)(/* in */ struct IEcoToolchainThompson1* me,/* in */ IEcoData1Table* pITransitionTable);
 
-    char_t*(*getUniqueId)(/* in */ struct IEcoToolchainThompson1* me);
+    int16_t(*TransitionTableInfo)(/* in */ struct IEcoToolchainThompson1* me,/* in */ IEcoData1Table* pITransitionTable);
 
     /* Интерфейс для работы с памятью */
     IEcoMemoryAllocator1* m_pIMem;
@@ -62,7 +60,7 @@ typedef struct CEcoToolchainThompson1 {
 	char_t KleeneStar;
 
 	// 
-	int16_t UniqueStateIdentifyier;
+	char_t* UniqueStateIdentifyier;
 
     IEcoLog1* m_pILog;
 	
