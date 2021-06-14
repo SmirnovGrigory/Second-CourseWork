@@ -16,7 +16,7 @@
  * </ссылка>
  *
  * <автор>
- *   Copyright (c) 2018 Vladimir Bashev. All rights reserved.
+ *   Copyright (c) 2021 Smirnov Grigory. All rights reserved.
  * </автор>
  *
  */
